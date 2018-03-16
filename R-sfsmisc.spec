@@ -4,7 +4,7 @@
 #
 Name     : R-sfsmisc
 Version  : 1.1.2
-Release  : 5
+Release  : 6
 URL      : https://cran.r-project.org/src/contrib/sfsmisc_1.1-2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/sfsmisc_1.1-2.tar.gz
 Summary  : Utilities from 'Seminar fuer Statistik' ETH Zurich
@@ -12,10 +12,8 @@ Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-Hmisc
 Requires: R-e1071
-Requires: R-gmp
 BuildRequires : R-Hmisc
 BuildRequires : R-e1071
-BuildRequires : R-gmp
 BuildRequires : clr-R-helpers
 
 %description
@@ -37,11 +35,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521181346
+export SOURCE_DATE_EPOCH=1521181533
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521181346
+export SOURCE_DATE_EPOCH=1521181533
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
