@@ -4,28 +4,21 @@
 #
 Name     : R-sfsmisc
 Version  : 1.1.3
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/sfsmisc_1.1-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/sfsmisc_1.1-3.tar.gz
-Summary  : Utilities from 'Seminar fuer Statistik' ETH Zurich
+Summary  : Utilities from Seminar fuer Statistik ETH Zurich
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-Hmisc
-Requires: R-e1071
 BuildRequires : R-Hmisc
 BuildRequires : R-e1071
 BuildRequires : buildreq-R
 
 %description
-some of which were ported from S-plus in the 1990's.
- For graphics, have pretty (Log-scale) axes, an enhanced Tukey-Anscombe
-   plot, combining histogram and boxplot, 2d-residual plots, a 'tachoPlot()',
-   pretty arrows, etc.
- For robustness, have a robust F test and robust range().
- For system support, notably on Linux, provides 'Sys.*()' functions with
-   more access to system and CPU information.
- Finally, miscellaneous utilities such as simple efficient prime numbers,
-   integer codes, Duplicated(), toLatex.numeric() and is.whole().
+sfsmisc
+=======
+The R package sfsmisc  has finally made it into a revision control system,
+and the fad of the day being git & github, so be it!
 
 %prep
 %setup -q -c -n sfsmisc
@@ -35,10 +28,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1543377533
+export SOURCE_DATE_EPOCH=1552853563
 
 %install
-export SOURCE_DATE_EPOCH=1543377533
+export SOURCE_DATE_EPOCH=1552853563
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -74,8 +67,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library sfsmisc|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  sfsmisc || :
 
 
 %files
@@ -107,3 +99,11 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/sfsmisc/help/sfsmisc.rdx
 /usr/lib64/R/library/sfsmisc/html/00Index.html
 /usr/lib64/R/library/sfsmisc/html/R.css
+/usr/lib64/R/library/sfsmisc/tests/dDA.R
+/usr/lib64/R/library/sfsmisc/tests/dDA.Rout.save
+/usr/lib64/R/library/sfsmisc/tests/eaxis.R
+/usr/lib64/R/library/sfsmisc/tests/misc.R
+/usr/lib64/R/library/sfsmisc/tests/p.R
+/usr/lib64/R/library/sfsmisc/tests/p.Rout.save
+/usr/lib64/R/library/sfsmisc/tests/posdef.R
+/usr/lib64/R/library/sfsmisc/tests/posdef.Rout.save
