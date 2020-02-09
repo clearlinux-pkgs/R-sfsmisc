@@ -1,7 +1,6 @@
 # This file contains recursive sources that require this package
-R-DescTools
 R-ICEbox
-R-Rmpfr
+R-ddalpha
 R-distr
 R-gmp
 R-robustbase
