@@ -4,16 +4,12 @@
 #
 Name     : R-sfsmisc
 Version  : 1.1.7
-Release  : 33
+Release  : 34
 URL      : https://cran.r-project.org/src/contrib/sfsmisc_1.1-7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/sfsmisc_1.1-7.tar.gz
 Summary  : Utilities from 'Seminar fuer Statistik' ETH Zurich
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-Hmisc
-Requires: R-e1071
-BuildRequires : R-Hmisc
-BuildRequires : R-e1071
 BuildRequires : buildreq-R
 
 %description
@@ -36,10 +32,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1588872535
+export SOURCE_DATE_EPOCH=1589781266
 
 %install
-export SOURCE_DATE_EPOCH=1588872535
+export SOURCE_DATE_EPOCH=1589781266
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
