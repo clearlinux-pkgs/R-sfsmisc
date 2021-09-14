@@ -1,5 +1,6 @@
 # This file contains recursive sources that require this package
 R-ICEbox
 R-Rmpfr
+R-corrgram
 R-ddalpha
 R-distr
