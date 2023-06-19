@@ -5,7 +5,7 @@
 #
 Name     : R-sfsmisc
 Version  : 1.1.15
-Release  : 62
+Release  : 63
 URL      : https://cran.r-project.org/src/contrib/sfsmisc_1.1-15.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/sfsmisc_1.1-15.tar.gz
 Summary  : Utilities from 'Seminar fuer Statistik' ETH Zurich
