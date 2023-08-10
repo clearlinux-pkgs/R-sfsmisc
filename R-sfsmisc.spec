@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-sfsmisc
-Version  : 1.1.15
-Release  : 63
-URL      : https://cran.r-project.org/src/contrib/sfsmisc_1.1-15.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/sfsmisc_1.1-15.tar.gz
+Version  : 1.1.16
+Release  : 64
+URL      : https://cran.r-project.org/src/contrib/sfsmisc_1.1-16.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/sfsmisc_1.1-16.tar.gz
 Summary  : Utilities from 'Seminar fuer Statistik' ETH Zurich
 Group    : Development/Tools
 License  : GPL-2.0+
@@ -29,16 +29,19 @@ some of which were ported from S-plus in the 1990s.
 
 %prep
 %setup -q -n sfsmisc
+pushd ..
+cp -a sfsmisc buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682023362
+export SOURCE_DATE_EPOCH=1691686576
 
 %install
-export SOURCE_DATE_EPOCH=1682023362
+export SOURCE_DATE_EPOCH=1691686576
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -76,6 +79,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc . || :
 
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
